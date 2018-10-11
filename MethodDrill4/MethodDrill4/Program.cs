@@ -11,33 +11,31 @@ namespace MethodDrill4
         static void Main(string[] args)
         {
             Math input = new Math();
-            int input1 = 0;
-            int input2 = 0;
-            int result = 0;
-
-
+            int result;
+            
             Console.WriteLine("You will be asked for two numbers for a math operation.");
             Console.WriteLine("The second number is optional.");
             Console.WriteLine("Enter the first number:");
-            input1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter the second number (if you wish):");
-            input2 = Convert.ToInt32(Console.ReadLine());
+            int input1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the second number (if you wish) and press Enter.");
+            string input2 = Console.ReadLine();
 
+            bool isEmpty = string.IsNullOrEmpty(input2);
 
-            if (input2 > 0)
+            if (!isEmpty)
             {
-                result = input.DoMathStuff(input1, input2);
+                result = input.DoMathStuff(input1, Convert.ToInt32(input2));
             }
             else
             {
+                Console.WriteLine("You chose not to enter a second number. The default will be used.");
                 result = input.DoMathStuff(input1);
             }
 
-            result = input.DoMathStuff(input1);
-
             Console.WriteLine("The result is: " + result);
             Console.ReadLine();
-
+            Console.WriteLine("Press any key to close.");
+            Console.ReadKey();
         }
     }
 }
