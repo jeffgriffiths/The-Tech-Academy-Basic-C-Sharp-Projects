@@ -29,16 +29,6 @@ namespace Drill_Page_131
             }
         }
 
-        public static implicit operator Employee<T>(List<string> v)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static implicit operator Employee<T>(List<int> v)
-        {
-            throw new NotImplementedException();
-        }
-
         //public string CheckId(Employee employeeOne, Employee employeeTwo)
         //{
         //    bool compareId = employeeOne.EmployeeId == employeeTwo.EmployeeId;
